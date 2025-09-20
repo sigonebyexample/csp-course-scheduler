@@ -45,7 +45,7 @@ else:
 python examples/basic_scheduling.py
 ``
 `
-
+```
 # Creating Custom Problems
 ```
 # See examples/custom_problem.py for detailed example
