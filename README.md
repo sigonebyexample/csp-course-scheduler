@@ -18,6 +18,54 @@ git clone https://github.com/sigonebyexample/csp-course-scheduler
 cd csp-course-scheduler
 pip install -r requirements.txt
 ```
+## Usage
+# Basic Usage
+```
+from src.models import CSPProblem
+from src.csp_solver import CSPSolver
+
+# Define your problem
+variables = ["CourseA", "CourseB", "CourseC"]
+constraints = [("CourseA", "CourseB"), ("CourseB", "CourseC")]
+
+# Create problem instance
+problem = CSPProblem(variables, constraints)
+
+# Solve it
+solver = CSPSolver(problem)
+solution = solver.solve()
+
+if solution.is_solved:
+    print("Solution found:", solution.assignment)
+else:
+    print("No solution exists")
+```
+# Using the Provided Example
+```
+python examples/basic_scheduling.py
+``
+`
+
+# Creating Custom Problems
+```
+# See examples/custom_problem.py for detailed example
+from src.models import CSPProblem
+from src.csp_solver import CSPSolver
+
+# Define custom domains
+domains = {
+    "Meeting": ["Monday", "Tuesday"],
+    "Class": ["Monday", "Wednesday"],
+    "Study": ["Monday", "Tuesday", "Wednesday"]
+}
+
+# Define constraints
+constraints = [("Meeting", "Class"), ("Class", "Study")]
+
+problem = CSPProblem(["Meeting", "Class", "Study"], constraints, domains)
+solver = CSPSolver(problem)
+solution = solver.solve()
+```
 
 ## Algorithm Explanation
 
