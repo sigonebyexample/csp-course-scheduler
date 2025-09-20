@@ -43,8 +43,7 @@ else:
 # Using the Provided Example
 ```
 python examples/basic_scheduling.py
-``
-`
+
 ```
 # Creating Custom Problems
 ```
