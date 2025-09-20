@@ -12,7 +12,6 @@ A constraint satisfaction problem solver for course scheduling using backtrackin
 
 ## Installation
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/sigonebyexample/csp-course-scheduler
 cd csp-course-scheduler
@@ -65,7 +64,15 @@ problem = CSPProblem(["Meeting", "Class", "Study"], constraints, domains)
 solver = CSPSolver(problem)
 solution = solver.solve()
 ```
+## Running Tests
+```
+# Run all tests
+python -m unittest discover tests
 
+# Run specific test file
+python -m unittest tests.test_csp_solver
+python -m unittest tests.test_consistency
+```
 ## Algorithm Explanation
 
 ```markdown
